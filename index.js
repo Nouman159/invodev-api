@@ -7,6 +7,7 @@ const errorController = require('./Controllers/errorController')
 const doctor = require('./Routes/doctor')
 const patient = require('./Routes/patient')
 const appointment = require('./Routes/appointment')
+const testHistory = require('./Routes/testHistory')
 
 //Express Server Setup
 const app = express();
@@ -32,6 +33,7 @@ mongoose.connect(DB)
         app.use('/invodev-api/doctors', doctor)
         app.use('/invodev-api/patients', patient)
         app.use('/invodev-api/appointments', appointment)
+        app.use('/invodev-api/tests', testHistory)
 
         app.use(errorController.get404)
         app.use(errorController.get500)
